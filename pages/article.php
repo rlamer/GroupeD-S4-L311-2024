@@ -18,7 +18,7 @@
 		</ul>
 	</div>
 	<div class="image">
+		<!-- correction de nom de variable article -->
 		<img src="<?php echo $article['image'];?>" alt="" />
-		<!-- correction de nom de variable -->
 	</div>
 </section>

@@ -1,9 +1,10 @@
 <?php 
 	$message = null;
-	if($_SERVER["RQUEST_METHOD"] == "POST"){
+	if($_SERVER["REQUEST_METHOD"] == "POST"){ // correction du mot REQUEST 
 	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
 	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
-	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
+				$_SESSION['User'] = connectUser($_POST['login'], $_POST['password']); // Correction ici : $_GET['login'] -> $_POST['login']
+
 
 	    		if(!is_null($_SESSION['User'])){
 	    			header("Location:index.php");
@@ -25,7 +26,8 @@
 				</header>
 				<div class="content">
 					<?php echo (!is_null($message) ? "<p>".$message."</p>" : '');?>
-					<form method="post" action="#">
+					<form method="post" action="">
+						<!--  -->
 						<div class="fields">
 							<div class="field half">
 								<label for="login">Nom d'utilisateur</label>
