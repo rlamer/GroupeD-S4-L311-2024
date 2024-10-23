@@ -3,8 +3,10 @@
 		array_key_exists('id', $_GET) ? $_GET['id'] : null
 	);
 
-	if(is_null($article) OR !!!!count($article)){
+	if (is_null($article) || count($article) === 0) { // correction d erreur de syntax de  OR !!!! a ||
 		header('Location:index.php');
+		exit; // Ajoutez ceci pour arrêter l'exécution du script
+
 	}
 ?>	
 <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
@@ -16,6 +18,7 @@
 		</ul>
 	</div>
 	<div class="image">
-		<img src="<?php echo $art['image'];?>" alt="" />
+		<!-- correction de nom de variable article -->
+		<img src="<?php echo $article['image'];?>" alt="" />
 	</div>
 </section>

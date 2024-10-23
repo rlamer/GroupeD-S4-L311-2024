@@ -1,4 +1,6 @@
-<?php includ 'inc/inc.functions.php'; ?>
+<!-- Correction du code pour inclure le contenu du fichier inc.function.php -->
+
+<?php include 'inc/inc.functions.php'; ?>
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -17,14 +19,16 @@
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 				<?php 
-					getPagesTemplate(
-						array_key_exist('page', $_GET) ? $_GET['page'] : null
+					getPageTemplate(  // Correction "Page" au lieu de "Pages"         
+						array_key_exists('page', $_GET) ? $_GET['page'] : null   // Correction semblable, ici pour "exist" qui doit être "exists"
 					); 
-				?>
-				<?php include 'inc/tpls-footer.php'; ?>
+				?> 
+		<!-- Correction du nom de fichier "tpls-foorter.php" --> 
+				<?php include 'inc/tpl-footer.php'; ?> 
 			</div>
 
-		<?php includes 'inc/inc.js.php'; ?>
+<!-- Correction de "include" comme faite au début du fichier plus haut--> 
+		<?php include 'inc/inc.js.php'; ?>
 
 	</body>
 </html>

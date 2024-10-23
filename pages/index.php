@@ -18,18 +18,20 @@
 		$compteur = 1;
 		foreach($_articles as $article){
 			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-			##$compteur++;
+			$compteur++;//décommenté cette ligne
 			?>
 				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
 					<div class="content">
 						<h2><?php echo $article['titre'];?></h2>
-						<p><?php echo $article['titre'];?></p>
+						<!-- corrigé titre par texte -->
+						<p><?php echo $article['texte'];?></p>
 						<ul class="actions stacked">
 							<li><a href="?page=article&id=<?php echo $article['id'];?>" class="button">Lire la suite</a></li>
 						</ul>
 					</div>
 					<div class="image">
-						<img src="<?php echo $art_icle['image'];?>" alt="" />
+						<!-- correction de nom de variable article -->
+						<img src="<?php echo $article['image'];?>" alt="" />
 					</div>
 				</section>
 
