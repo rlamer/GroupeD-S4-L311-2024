@@ -1,6 +1,8 @@
 <?php
-	setDisconnectUser();
+setDisconnectUser(); // Déconnecte l'utilisateur
 
-	header('Location:index.php');// correction de nom de fichier
-	exit();//ajouté exit
+header('Location:index.php'); // Redirige vers la page d'accueil
+
+exit(); // Stoppe l'exécution du script après la redirection
+
 ?>

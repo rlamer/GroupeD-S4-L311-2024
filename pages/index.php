@@ -11,31 +11,31 @@
 	</div>
 </section>
 
-<?php 
-	$_articles = getArticlesFromJson();
+<?php
+$_articles = getArticlesFromJson();
 
-	if($_articles && count($_articles)){
-		$compteur = 1;
-		foreach($_articles as $article){
-			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-			$compteur++;//décommenté cette ligne
-			?>
-				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
-					<div class="content">
-						<h2><?php echo $article['titre'];?></h2>
-						<!-- corrigé titre par texte -->
-						<p><?php echo $article['texte'];?></p>
-						<ul class="actions stacked">
-							<li><a href="?page=article&id=<?php echo $article['id'];?>" class="button">Lire la suite</a></li>
-						</ul>
-					</div>
-					<div class="image">
-						<!-- correction de nom de variable article -->
-						<img src="<?php echo $article['image'];?>" alt="" />
-					</div>
-				</section>
+if ($_articles && count($_articles)) {
+	$compteur = 1;
+	foreach ($_articles as $article) {
+		$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
+		$compteur++; //décommenté cette ligne
+?>
+		<section class="spotlight style1 orient-<?php echo $classCss; ?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
+			<div class="content">
+				<h2><?php echo $article['titre']; ?></h2>
+				<!-- corrigé titre par texte -->
+				<p><?php echo $article['texte']; ?></p>
+				<ul class="actions stacked">
+					<li><a href="?page=article&id=<?php echo $article['id']; ?>" class="button">Lire la suite</a></li>
+				</ul>
+			</div>
+			<div class="image">
+				<!-- correction de nom de variable article -->
+				<img src="<?php echo $article['image']; ?>" alt="" />
+			</div>
+		</section>
 
-			<?php
-		}
+<?php
 	}
+}
 ?>
